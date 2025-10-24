@@ -244,9 +244,8 @@
    Mobile: tighter matchup-card spacing (override / standardize)
    ====================== */
 @media (max-width: 768px) {
-  /* Reduce outer card padding and add a small vertical gap */
   .matchup-card {
-    padding: 6px !important;
+    padding: 4px 6px !important;
     margin: 6px 0 !important;
     border-radius: 8px !important;
     background: rgba(255,255,255,0.02) !important;
@@ -254,53 +253,53 @@
     box-sizing: border-box !important;
   }
 
-  /* Title: smaller padding and slightly less negative margin so it sits neatly */
+  /* Title sits slightly overlapping the first row; reduced padding for compactness */
   .matchup-card .matchup-title {
-    margin-bottom: -6px !important;
-    padding: 4px 8px !important;
-    font-size: 0.88rem !important;
+    margin-bottom: -4px !important;
+    padding: 3px 6px !important;
+    font-size: 0.86rem !important;
     border-radius: 6px !important;
   }
 
-  /* Team rows inside matchup: compact padding and tighter spacing */
+  /* Team rows inside matchup: more compact padding and reduced gaps */
   .matchup-card .team-item {
-    padding: 6px 6px !important;
-    margin-bottom: 4px !important;
-    gap: 8px !important;
+    padding: 4px 6px !important;
+    margin-bottom: 3px !important;
+    gap: 6px !important;
     align-items: center !important;
   }
 
-  /* Seed, logo, name, rpi sizing for consistent compact layout */
+  /* Seed, logo, name, rpi sizing tightened for mobile */
   .matchup-card .team-seed {
-    width: 28px !important;
-    height: 28px !important;
-    font-size: 0.75rem !important;
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.72rem !important;
     margin-right: 6px !important;
   }
   .matchup-card .team-logo {
-    width: 36px !important;
-    height: 36px !important;
-    padding: 4px !important;
-    min-width: 36px !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 3px !important;
+    min-width: 32px !important;
     border-radius: 6px !important;
   }
   .matchup-card .team-name-bracket {
-    font-size: 0.86rem !important;
-    margin-left: 8px !important;
+    font-size: 0.82rem !important;
+    margin-left: 6px !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
   }
   .matchup-card .team-rpi {
-    font-size: 0.8rem !important;
-    margin-left: 8px !important;
-    min-width: 40px !important;
+    font-size: 0.75rem !important;
+    margin-left: 6px !important;
+    min-width: 36px !important;
     text-align: right !important;
     display: inline-block !important;
   }
 
-  /* Make sure collapsible content gap remains small and consistent */
+  /* Ensure compact and consistent small gaps inside collapsible content */
   .collapsible-region .collapsible-content {
-    gap: 0.35rem !important;
+    gap: 0.28rem !important;
   }
 }
