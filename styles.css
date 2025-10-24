@@ -1,0 +1,108 @@
+.rank-number {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    width: 70px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-glow) 100%);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cell-center { display: flex; align-items: center; justify-content: center; height: 100%; }
+
+/* Desktop-only: make team names slightly larger and scale down stat sizes */
+@media (min-width: 769px) {
+    /* Target both table and card layouts */
+    .rankings-table .team-name span,
+    .rankings-table .team-name .team-name-text,
+    .rankings-table .team-name .team-name-bracket,
+    .standings-list .team-card .team-name-text,
+    .standings-list .team-card .team-name-bracket {
+        font-size: 40px !important;
+        line-height: 1.02;
+    }
+
+    /* Desktop-only: slightly smaller RPI scores for tighter layout */
+    .rpi-score,
+    .rankings-table .rpi-score,
+    .standings-list .team-card .rpi-score,
+    .team-rpi {
+        font-size: 24px !important;
+        line-height: 1.05;
+        font-weight: 800;
+    }
+
+    /* Desktop-only: slightly smaller record and WP/OPW/OOPW */
+    .rankings-table .record,
+    .rankings-table .wp,
+    .rankings-table .opw,
+    .rankings-table .oopw,
+    .standings-list .team-card .team-record {
+        font-size: 24px !important;
+        line-height: 1.05;
+        font-weight: 600;
+    }
+
+    /* Desktop-only: make # column narrower */
+    .rankings-table th:first-child { width: 56px !important; max-width: 56px !important; text-align: center; }
+    .rankings-table td:first-child { width: 56px !important; max-width: 56px !important; padding: 0.25rem !important; }
+
+    /* Adjust the rank-number bubble to match the smaller column */
+    .rank-number { width: 48px !important; height: 48px !important; font-size: 1.2rem !important; }
+
+    /* Desktop-only: make TEAM column a bit bigger and stat columns a bit smaller */
+    .rankings-table th:nth-child(2) { width: 380px; max-width: 380px; text-align: left; }
+    .rankings-table th:nth-child(3) { width: 100px; max-width: 100px; } /* RECORD */
+    .rankings-table th:nth-child(4),
+    .rankings-table th:nth-child(5),
+    .rankings-table th:nth-child(6) { width: 100px; max-width: 100px; } /* WP / OPW / OOPW */
+    /* make RPI column slightly larger on desktop */
+    .rankings-table th:nth-child(7) { width: 130px; max-width: 130px; } /* RPI slightly larger */
+
+    .rankings-table td.team-name { max-width: 380px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rankings-table td.record { width: 100px; }
+    .rankings-table td.wp,
+    .rankings-table td.opw,
+    .rankings-table td.oopw { width: 100px; }
+    .rankings-table td .rpi-score { width: 130px; display: inline-block; }
+
+    /* Desktop-only: make bracket module team names larger for readability */
+    .team-name-bracket {
+        font-size: 24px;
+        line-height: 1.08;
+        font-weight: 700;
+    }
+
+    /* Desktop-only: add white border/highlight around first-round matchup cards */
+    .matchup-card {
+        border: 2px solid rgba(255,255,255,0.95) !important;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+        border-radius: 10px;
+        background-clip: padding-box;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+}
+
+@media (max-width: 768px) {
+    /* make team name text smaller on mobile for both table and card layouts */
+    .rankings-table .team-name span,
+    .rankings-table .team-name .team-name-text,
+    .rankings-table .team-name .team-name-bracket,
+    .standings-list .team-card .team-name-text,
+    .standings-list .team-card .team-name-bracket {
+        font-size: 0.88rem !important;
+        line-height: 1.05 !important;
+    }
+}
