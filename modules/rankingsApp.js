@@ -31,10 +31,13 @@ export class RankingsApp {
         this.loadRankings(this.currentClass).then(() => {
           this.togglePlayoffButton();
           this.scrollToGenerateIfMobile();
+          // If selecting 1A, 2A, or 8A, also scroll to the first row on mobile
+          this.scrollToFirstRowIfMobile();
         }).catch(() => {
           // still toggle and try to scroll even if load failed
           this.togglePlayoffButton();
           this.scrollToGenerateIfMobile();
+          this.scrollToFirstRowIfMobile();
         });
       });
     });
@@ -52,13 +55,29 @@ export class RankingsApp {
       if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
         const target = document.getElementById('generateBracket') || document.querySelector('.rankings-container');
         if (!target) return;
-        // use smooth scroll and align so the target is at top of viewport
+        // use smooth scroll and align so the target is at top of viewport (immediate)
         target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-        // removed delayed second scroll to eliminate initial delay before animation starts
       }
     } catch (e) {
       // fail silently
       console.warn('scrollToGenerateIfMobile failed', e);
+    }
+  }
+
+  // Scroll the viewport to the first ranking row (table row or mobile card) on small screens
+  scrollToFirstRowIfMobile() {
+    try {
+      if (!(window.matchMedia && window.matchMedia('(max-width: 768px)').matches)) return;
+      if (!['Class 1A','Class 2A','Class 8A'].includes(this.currentClass)) return;
+      // Immediately attempt to scroll to the first ranking element (no extra delay)
+      const firstCard = document.querySelector('.standings-list .team-card');
+      if (firstCard) { firstCard.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' }); return; }
+      const firstRow = document.querySelector('.rankings-table tbody tr');
+      if (firstRow) { firstRow.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' }); return; }
+      const rc = document.querySelector('.rankings-container');
+      if (rc) rc.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    } catch (e) {
+      console.warn('scrollToFirstRowIfMobile failed', e);
     }
   }
 

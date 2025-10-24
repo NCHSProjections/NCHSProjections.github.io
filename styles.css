@@ -28,7 +28,7 @@
     .rankings-table .team-name .team-name-bracket,
     .standings-list .team-card .team-name-text,
     .standings-list .team-card .team-name-bracket {
-        font-size: 40px !important;
+        font-size: 28px !important;
         line-height: 1.02;
     }
 
@@ -105,4 +105,64 @@
         font-size: 0.88rem !important;
         line-height: 1.05 !important;
     }
+}
+
+/* Strong mobile overrides: make logos and rank bubbles much smaller */
+@media (max-width: 768px) {
+    /* Target any team logos used in table, cards, bracket, and matchup cards */
+    .team-logo,
+    .rankings-table .team-logo,
+    .standings-list .team-card .team-logo,
+    .team-item .team-logo,
+    .collapsible-region .team-logo,
+    .team-list .team-logo {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 3px !important;
+        min-width: 32px !important;
+        flex: 0 0 32px !important;
+        object-fit: contain !important;
+        border-radius: 6px !important;
+        display: inline-block !important;
+    }
+
+    /* Make the circular ranking bubble notably smaller */
+    .rank-number,
+    .rankings-table .rank-number,
+    .standings-list .team-card .rank-number {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.9rem !important;
+        line-height: 32px !important;
+    }
+
+    /* Ensure team-seed in bracket/matchups also reduces */
+    .team-seed {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.75rem !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Tweak surrounding spacing so rows remain balanced */
+    .team-card,
+    .team-item {
+        gap: 6px !important;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+}
+
+@media (max-width: 768px) {
+  .team-rpi {
+        font-size: 0.8rem !important;
+        line-height: 1.05;
+        font-weight: 800;
+    }
+    /* make bracket logos and team name smaller for mobile */
+    .collapsible-region .team-logo { width: 36px !important; height: 36px !important; padding: 4px !important; min-width:36px !important; }
+    .collapsible-region .team-name-bracket { font-size: 0.8rem !important; line-height:1.05 !important; align-items:left !important; }
+    .collapsible-region .team-seed { width: 20px !important; height: 20px !important; font-size: 0.52rem !important; }
 }
