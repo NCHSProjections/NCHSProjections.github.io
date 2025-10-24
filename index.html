@@ -1021,6 +1021,21 @@
                 padding: 0;
             }
         }
+        @media (min-width: 769px) {
+  .container {
+    max-width: none !important;  /* remove the 1400px limit */
+  }
+  .rankings-container,
+  .bracket-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
     </style>
     <link rel="stylesheet" href="/styles.css">
 </head>
