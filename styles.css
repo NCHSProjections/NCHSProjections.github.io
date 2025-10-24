@@ -96,6 +96,10 @@
 }
 
 @media (max-width: 768px) {
+    /* tighten bracket region and matchup spacing for mobile */
+    .region { padding: 0.2rem !important; }
+    .collapsible-region .team-item { padding: 0.4rem !important; margin-bottom: 0.45rem !important; }
+    
     /* make team name text smaller on mobile for both table and card layouts */
     .rankings-table .team-name span,
     .rankings-table .team-name .team-name-text,
@@ -167,4 +171,18 @@
     .collapsible-region .team-seed { width: 20px !important; height: 20px !important; font-size: 0.52rem !important; }
     /* Hide RPI values inside bracket collapsible regions on mobile for a cleaner compact layout */
     .collapsible-region .team-rpi { display: none !important; }
+
+    /* Make team cards and matchup cards fill the full width of their collapsible container on mobile */
+    .collapsible-region .team-list,
+    .collapsible-region .collapsible-content {
+        width: 100% !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .collapsible-region .team-item,
+    .collapsible-region .matchup-card {
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
 }
