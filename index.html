@@ -360,7 +360,7 @@
         /* Prevent logo/record overlap: keep logo fixed size, allow name to truncate, and
            reduce logo size on small screens so record cell won't overlap */
         .team-name > div { display: flex; align-items: center; gap: 12px; min-width: 0; }
-        .team-name .team-logo { flex: 0 0 auto; width: 84px !important;  height: 84px !important; object-fit: contain; border-radius: 8px; padding: 0px !important; }
+        .team-name .team-logo { flex: 0 0 auto; width: 64px; height: 64px; object-fit: contain; border-radius: 8px; padding: 6px; }
         .team-name span { display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 
         /* make record cell keep its space and avoid wrapping under logo on narrow screens */
@@ -1020,17 +1020,8 @@
                 max-width: none;
                 padding: 0;
             }
-
-            /* Add a small vertical margin so the full-bleed modules breathe on desktop */
-            .rankings-container,
-            .bracket-container {
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-            }
         }
-      /* Desktop-only override: center at 80% width */
-/* Desktop-only: make containers fill almost the full viewport width cleanly */
-@media (min-width: 769px) {
+        @media (min-width: 769px) {
   .container {
     max-width: none !important;  /* remove the 1400px limit */
   }
@@ -1044,8 +1035,6 @@
     padding-right: 2rem;
   }
 }
-
-
 
     </style>
     <link rel="stylesheet" href="/styles.css">
