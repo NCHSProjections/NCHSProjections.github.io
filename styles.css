@@ -237,11 +237,15 @@
 
 /* Use gap on the collapsible content so matchup-card spacing is reliable across breakpoints */
 .collapsible-region .collapsible-content {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: .3rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
   width: 100%;
   box-sizing: border-box;
+}
+/* Hide collapsible content when its preceding header has aria-expanded="false" */
+.collapsible-region .collapsible-header[aria-expanded="false"] + .collapsible-content {
+  display: none !important;
 }
 
 /* ======================
@@ -307,4 +311,16 @@
   .collapsible-region .collapsible-content {
     gap: 0.28rem !important;
   }
+}
+
+@media (max-width: 768px) {
+    /* Ensure top-8 bye-team RPIs are forced visible on mobile with higher specificity */
+    .collapsible-region .team-list .team-rpi.bye-rpi,
+    .collapsible-region .team-rpi.bye-rpi {
+        display: inline-block !important;
+        font-size: 0.78rem !important;
+        min-width: 40px !important;
+        text-align: right !important;
+        color: var(--text-secondary) !important;
+    }
 }
