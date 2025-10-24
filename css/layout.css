@@ -146,7 +146,15 @@ header{text-align:center;margin-bottom:3rem;position:relative;}
   .container{padding:1rem;}
   /* make the banner image fill more of the banner container on mobile */
   .logo-container.banner { padding:0.5rem !important; border-radius:12px; }
-  .banner-logo { height:160px; width:100%; max-width:100%; border-radius:10px; object-fit:cover; }
+  .banner-logo {
+    width: 100%;
+    height: auto;
+    max-height: 220px; /* prevents excessively tall banners on some images */
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;  
+  }
   .team-name .team-logo{width:40px;height:40px;padding:4px;}
   .rankings-container{padding:1rem;overflow-x:auto;width:100%;max-width:100%;}
   .controls{flex-direction:column;gap:1rem;}
