@@ -182,6 +182,8 @@
     .collapsible-region .team-seed { width: 24px !important; height: 24px !important; font-size: 0.72rem !important; display:inline-flex; align-items:center; justify-content:center; }
     /* Hide RPI values inside bracket collapsible regions on mobile for a cleaner compact layout */
     .collapsible-region .team-rpi { display: none !important; }
+    /* but show RPI for top-8 bye teams (they get class .bye-rpi) */
+    .collapsible-region .team-rpi.bye-rpi { display: inline-block !important; font-size: 0.78rem !important; min-width:40px !important; text-align:right !important; color: var(--text-secondary) !important; }
 
     /* Make team cards and matchup cards fill the full width of their collapsible container on mobile */
     .collapsible-region .team-list,
