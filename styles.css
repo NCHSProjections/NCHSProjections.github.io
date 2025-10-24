@@ -150,10 +150,11 @@
     }
 
     /* Ensure team-seed in bracket/matchups also reduces */
+    /* Make team-seed consistent across first-round byes and matchup cards on mobile */
     .team-seed {
-        width: 26px !important;
-        height: 26px !important;
-        font-size: 0.75rem !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.72rem !important;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -176,8 +177,9 @@
     }
     /* make bracket logos and team name smaller for mobile */
     .collapsible-region .team-logo { width: 36px !important; height: 36px !important; padding: 4px !important; min-width:36px !important; }
-    .collapsible-region .team-name-bracket { font-size: 0.8rem !important; line-height:1.05 !important; align-items:left !important; }
-    .collapsible-region .team-seed { width: 20px !important; height: 20px !important; font-size: 0.52rem !important; }
+    .collapsible-region .team-name-bracket { font-size: 0.8rem !important; line-height:1.05 !important; /* reduce left gap to sit closer to logo on mobile */ margin-left: 4px !important; }
+    /* Ensure bye-team seeds match matchup seeds on mobile */
+    .collapsible-region .team-seed { width: 24px !important; height: 24px !important; font-size: 0.72rem !important; display:inline-flex; align-items:center; justify-content:center; }
     /* Hide RPI values inside bracket collapsible regions on mobile for a cleaner compact layout */
     .collapsible-region .team-rpi { display: none !important; }
 
@@ -286,9 +288,10 @@
   .matchup-card .team-name-bracket {
     font-size: 0.82rem !important;
     margin-left: 6px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
   .matchup-card .team-rpi {
     font-size: 0.75rem !important;

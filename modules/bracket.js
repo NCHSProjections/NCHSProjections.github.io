@@ -103,13 +103,14 @@ export function renderBracketWithMatchups(eastTeams, westTeams, eastMatchups, we
       d.style.padding = '0.6rem';
       d.style.marginBottom = '0.5rem';
       d.style.alignItems = 'center';
+      const rpiText = String(t.rpi || '').replace(/^RPI:\s*/i, '');
       d.innerHTML = `
         <div style="display: flex; align-items: center; gap: 12px; min-width:0; flex:1;">
           <div class="team-seed">${i+1}</div>
           <img src="${t.logo||''}" alt="${t.name}" class="team-logo" loading="lazy" decoding="async" style="width:56px;height:56px;padding:6px;background:rgba(255,255,255,0.65);border-radius:8px;flex:0 0 56px;object-fit:contain">
           <div class="team-name-bracket" style="flex:1; min-width:0; text-overflow:ellipsis; overflow:hidden;">${t.name} ${t.record?`(${t.record})`:''}</div>
         </div>
-        <div class="team-rpi" style="flex:0 0 auto; margin-left:10px;">RPI: ${String(t.rpi)}</div>
+        <div class="team-rpi" style="flex:0 0 auto; margin-left:10px;">${rpiText}</div>
       `;
       eastByes.content.appendChild(d);
     });
@@ -151,13 +152,14 @@ export function renderBracketWithMatchups(eastTeams, westTeams, eastMatchups, we
         row.className = 'team-item';
         row.style.marginBottom = '0.5rem';
         row.style.padding = '0.4rem 0';
+        const rpiText = String(teamObj.rpi || '').replace(/^RPI:\s*/i, '');
         row.innerHTML = `
           <div style="display:flex;align-items:center;gap:12px;min-width:0;">
             <div class="team-seed">${rankLabel}</div>
             <img src="${teamObj.logo||''}" alt="${teamObj.name}" class="team-logo" loading="lazy" decoding="async" style="width:48px;height:48px;padding:6px;background:rgba(255,255,255,0.65);border-radius:6px;flex:0 0 48px;object-fit:contain">
             <div class="team-name-bracket" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;">${teamObj.name} ${teamObj.record?`(${teamObj.record})`:''}</div>
           </div>
-          <div class="team-rpi" style="flex:0 0 auto; margin-left:8px;">RPI: ${String(teamObj.rpi)}</div>
+          <div class="team-rpi" style="flex:0 0 auto; margin-left:8px;">${rpiText}</div>
         `;
         return row;
       };
@@ -180,13 +182,14 @@ export function renderBracketWithMatchups(eastTeams, westTeams, eastMatchups, we
       d.style.padding = '0.6rem';
       d.style.marginBottom = '0.5rem';
       d.style.alignItems = 'center';
+      const rpiText = String(t.rpi || '').replace(/^RPI:\s*/i, '');
       d.innerHTML = `
         <div style="display:flex;align-items:center;gap:12px;min-width:0;flex:1;">
           <div class="team-seed">${i+1}</div>
           <img src="${t.logo||''}" alt="${t.name}" class="team-logo" loading="lazy" decoding="async" style="width:56px;height:56px;padding:6px;background:rgba(255,255,255,0.65);border-radius:8px;flex:0 0 56px;object-fit:contain">
           <div class="team-name-bracket" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;">${t.name} ${t.record?`(${t.record})`:''}</div>
         </div>
-        <div class="team-rpi" style="flex:0 0 auto; margin-left:10px;">RPI: ${String(t.rpi)}</div>
+        <div class="team-rpi" style="flex:0 0 auto; margin-left:10px;">${rpiText}</div>
       `;
       westByes.content.appendChild(d);
     });
@@ -221,13 +224,14 @@ export function renderBracketWithMatchups(eastTeams, westTeams, eastMatchups, we
         row.className = 'team-item';
         row.style.marginBottom = '0.5rem';
         row.style.padding = '0.4rem 0';
+        const rpiText = String(teamObj.rpi || '').replace(/^RPI:\s*/i, '');
         row.innerHTML = `
           <div style="display:flex;align-items:center;gap:12px;min-width:0;">
             <div class="team-seed">${rankLabel}</div>
             <img src="${teamObj.logo||''}" alt="${teamObj.name}" class="team-logo" loading="lazy" decoding="async" style="width:48px;height:48px;padding:6px;background:rgba(255,255,255,0.65);border-radius:6px;flex:0 0 48px;object-fit:contain">
-            <div class="team-name-bracket" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;">${teamObj.name} ${teamObj.record?`(${teamObj.record})`:''}</div>
+            <div class="team-name-bracket" style="flex:1;min-width:0;white-space:normal;word-break:break-word;">${teamObj.name} ${teamObj.record?`(${teamObj.record})`:''}</div>
           </div>
-          <div class="team-rpi" style="flex:0 0 auto; margin-left:8px;">RPI: ${String(teamObj.rpi)}</div>
+          <div class="team-rpi" style="flex:0 0 auto; margin-left:8px;">${rpiText}</div>
         `;
         return row;
       };

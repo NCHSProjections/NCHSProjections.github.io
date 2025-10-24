@@ -153,7 +153,7 @@ header{text-align:center;margin-bottom:3rem;position:relative;}
     max-width: 100%;
     border-radius: 10px;
     object-fit: cover;
-    display: block;  
+    display: block;
   }
   .team-name .team-logo{width:40px;height:40px;padding:4px;}
   .rankings-container{padding:1rem;overflow-x:auto;width:100%;max-width:100%;}
@@ -163,8 +163,18 @@ header{text-align:center;margin-bottom:3rem;position:relative;}
   /* reduce heavy padding for bracket region and team cards on mobile */
   .region { padding: 0.2rem !important; }
   .team-item { padding: 0.4rem !important; margin-bottom: 0.45rem !important; }
+
+  /* make bracket RPI values smaller on mobile for compactness */
+  .collapsible-region .team-rpi {
+    font-size: 0.72rem !important;
+    line-height: 1 !important;
+    min-width: 36px !important;
+    text-align: right !important;
+  }
+
   .rankings-table, .rankings-table thead, .rankings-table tbody, .rankings-table tr, .rankings-table th, .rankings-table td{display:block;width:100%;}
   .rankings-table thead{display:none;}
+  .collapsible-region .team-rpi { font-size:0.75rem !important; min-width:40px !important; text-align:right !important; font-weight:600; }
 }
 
 /* desktop touchups */
