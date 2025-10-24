@@ -84,7 +84,18 @@ export function renderRankings(data) {
   `;
 
   const useMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
-  container.innerHTML = useMobile ? cardHTML : tableHTML;
+  // on mobile, prepend a compact header row for clarity (#, Team, RPI)
+  if (useMobile) {
+    const mobileHeader = `
+      <div class="mobile-headers" role="presentation" style="display:flex;align-items:center;justify-content:space-between;padding:0.4rem 0;margin-bottom:0.4rem;">
+        <div style="flex:0 0 56px;text-align:center;font-weight:700">#</div>
+        <div style="flex:1;padding-left:8px;font-weight:700">Team</div>
+        <div style="flex:0 0 84px;text-align:right;font-weight:700">RPI</div>
+      </div>`;
+    container.innerHTML = mobileHeader + cardHTML;
+  } else {
+    container.innerHTML = tableHTML;
+  }
 
   const setLogosFromLookup = (lookup) => {
     const normMap = {};

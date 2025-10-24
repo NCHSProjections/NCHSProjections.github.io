@@ -109,6 +109,15 @@
         font-size: 0.88rem !important;
         line-height: 1.05 !important;
     }
+
+    /* Make RPI numbers smaller on mobile */
+    .rpi-score,
+    .rankings-table .rpi-score,
+    .standings-list .team-card .rpi-score,
+    .team-rpi {
+        font-size: 0.9rem !important;
+        padding: 0.25rem 0.5rem !important;
+    }
 }
 
 /* Strong mobile overrides: make logos and rank bubbles much smaller */
@@ -185,4 +194,113 @@
         margin: 0 !important;
         box-sizing: border-box !important;
     }
+
+    /* ensure first-round matchup cards have a clear white border on mobile */
+    .matchup-card {
+        border: 2px solid #ffffff !important;
+        box-shadow: none !important;
+        padding: 0.6rem !important;
+        background-clip: padding-box;
+    }
+
+    /* nudge the matchup title down so it visually sits on top of the first .team-item */
+    .matchup-card .matchup-title {
+        margin-bottom: -10px !important;
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        padding: 0 6px;
+        border-radius: 6px;
+    }
+
+    /* ensure the team items remain on a lower z layer so the title appears on top */
+    .matchup-card .team-item {
+        position: relative;
+        z-index: 1;
+        padding-top: 0.6rem !important;
+    }
+}
+
+/* ensure a small gap between first-round matchup cards across breakpoints */
+
+
+/* Mobile header styling for the rankings list */
+@media (max-width: 768px) {
+  .mobile-headers { color: var(--text); font-family: 'Oswald', sans-serif; font-size: 0.95rem; }
+  .mobile-headers div { color: var(--text-secondary); }
+  .mobile-headers div:first-child { display:flex;align-items:center;justify-content:center; }
+}
+
+/* Use gap on the collapsible content so matchup-card spacing is reliable across breakpoints */
+.collapsible-region .collapsible-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: .3rem !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ======================
+   Mobile: tighter matchup-card spacing (override / standardize)
+   ====================== */
+@media (max-width: 768px) {
+  /* Reduce outer card padding and add a small vertical gap */
+  .matchup-card {
+    padding: 6px !important;
+    margin: 6px 0 !important;
+    border-radius: 8px !important;
+    background: rgba(255,255,255,0.02) !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Title: smaller padding and slightly less negative margin so it sits neatly */
+  .matchup-card .matchup-title {
+    margin-bottom: -6px !important;
+    padding: 4px 8px !important;
+    font-size: 0.88rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* Team rows inside matchup: compact padding and tighter spacing */
+  .matchup-card .team-item {
+    padding: 6px 6px !important;
+    margin-bottom: 4px !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+
+  /* Seed, logo, name, rpi sizing for consistent compact layout */
+  .matchup-card .team-seed {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.75rem !important;
+    margin-right: 6px !important;
+  }
+  .matchup-card .team-logo {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 4px !important;
+    min-width: 36px !important;
+    border-radius: 6px !important;
+  }
+  .matchup-card .team-name-bracket {
+    font-size: 0.86rem !important;
+    margin-left: 8px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .matchup-card .team-rpi {
+    font-size: 0.8rem !important;
+    margin-left: 8px !important;
+    min-width: 40px !important;
+    text-align: right !important;
+    display: inline-block !important;
+  }
+
+  /* Make sure collapsible content gap remains small and consistent */
+  .collapsible-region .collapsible-content {
+    gap: 0.35rem !important;
+  }
 }

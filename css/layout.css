@@ -25,7 +25,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;
 header{text-align:center;margin-bottom:3rem;position:relative;}
 .logo-container.banner{
   background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%);
-  border-radius:15px;padding:2rem;margin-bottom:2rem;border:3px solid var(--accent);
+  border-radius:18px;padding:1.25rem 1.5rem;margin-bottom:1.25rem;border:3px solid var(--accent);
   box-shadow:0 15px 40px rgba(220,20,60,0.4),inset 0 1px 0 rgba(255,255,255,0.1);
   position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center;
 }
@@ -35,6 +35,7 @@ header{text-align:center;margin-bottom:3rem;position:relative;}
 }
 .banner-logo{max-width:600px;width:100%;height:auto;filter:drop-shadow(0 0 30px rgba(220,20,60,0.7));
   animation:bannerGlow 3s ease-in-out infinite alternate;position:relative;z-index:1;
+  border-radius:12px;display:block;object-fit:cover;
 }
 @keyframes bannerGlow{from{filter:drop-shadow(0 0 30px rgba(220,20,60,0.7)) brightness(1);transform:scale(1);}
   to{filter:drop-shadow(0 0 50px rgba(255,0,0,0.9)) brightness(1.1);transform:scale(1.02);}
@@ -120,6 +121,9 @@ header{text-align:center;margin-bottom:3rem;position:relative;}
 /* mobile / responsive rules (kept from original CSS) */
 @media (max-width:768px){
   .container{padding:1rem;}
+  /* make the banner image fill more of the banner container on mobile */
+  .logo-container.banner { padding:0.5rem !important; border-radius:12px; }
+  .banner-logo { height:160px; width:100%; max-width:100%; border-radius:10px; object-fit:cover; }
   .team-name .team-logo{width:40px;height:40px;padding:4px;}
   .rankings-container{padding:1rem;overflow-x:auto;width:100%;max-width:100%;}
   .controls{flex-direction:column;gap:1rem;}
@@ -135,6 +139,9 @@ header{text-align:center;margin-bottom:3rem;position:relative;}
 /* desktop touchups */
 @media (min-width:769px){
   .container{max-width:none!important;}
+  /* desktop: let banner be taller and fill width more, with slightly larger rounding */
+  .logo-container.banner { padding:1.5rem 2rem; border-radius:20px; }
+  .banner-logo { max-width:100%; height:200px; border-radius:14px; object-fit:cover; }
   .rankings-container,.bracket-container{width:100% !important;max-width:100% !important;margin-left:auto !important;margin-right:auto !important;padding-left:2rem;padding-right:2rem;}
 }
 

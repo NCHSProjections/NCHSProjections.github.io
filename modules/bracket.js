@@ -137,6 +137,7 @@ export function renderBracketWithMatchups(eastTeams, westTeams, eastMatchups, we
       md.style.background = 'rgba(220, 20, 60, 0.06)';
       
       const title = document.createElement('div');
+      title.className = 'matchup-title';
       title.style.color = '#FFFFFF';
       title.style.fontWeight = '600';
       title.style.marginBottom = '0.5rem';
@@ -206,6 +207,7 @@ export function renderBracketWithMatchups(eastTeams, westTeams, eastMatchups, we
       md.style.background = 'rgba(220, 20, 60, 0.06)';
       
       const title = document.createElement('div');
+      title.className = 'matchup-title';
       title.style.color = '#FFFFFF';
       title.style.fontWeight = '600';
       title.style.marginBottom = '0.5rem';
